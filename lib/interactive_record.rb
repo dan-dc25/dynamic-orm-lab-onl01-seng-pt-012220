@@ -4,7 +4,7 @@ require 'active_support/inflector'
 require 'active_support/inflector'
 
 
-class InteractiveRecord	class InteractiveRecord
+class InteractiveRecord	
 
 
   def self.table_name
@@ -56,7 +56,7 @@ class InteractiveRecord	class InteractiveRecord
   def self.find_by_name(name)
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
-  end
+end
 
   def self.find_by(hash)
     sql = "SELECT * FROM #{self.table_name} WHERE #{hash.keys[0].to_s} = '#{hash.values[0].to_s}'"
